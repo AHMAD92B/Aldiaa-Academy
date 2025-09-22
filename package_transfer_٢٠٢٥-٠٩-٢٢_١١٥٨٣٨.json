@@ -1,0 +1,19 @@
+{
+  "name": "educational-platform",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w apps/web\" \"npm run start -w apps/api\"",
+    "build": "npm run build -w apps/web && npm run build -w apps/api",
+    "test": "npm run test -w apps/web && npm run test -w apps/api",
+    "lint": "eslint . --ext js,jsx,ts,tsx"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.0"
+  }
+}
